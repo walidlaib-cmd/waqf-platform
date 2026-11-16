@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  waqftech:
+    build: .
+    container_name: waqftech_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./waqftech.db:/app/waqftech.db
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
